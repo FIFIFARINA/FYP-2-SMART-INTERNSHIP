@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Student Dashboard | SIMS</title><link rel="stylesheet" href="style.css"></head>
+<body class="dashboard-page">
+<header class="dashboard-header"><div><p class="student-eyebrow">SMART INTERNSHIP MANAGEMENT SYSTEM</p><h1>Student Dashboard</h1></div><div class="header-actions"><a class="action-link" href="student.html">Student Page · Forms</a><button class="logout-button" id="logoutButton">Log out</button></div></header>
+<section class="welcome-banner"><p>Welcome, <strong id="welcomeName">Student</strong></p></section>
+<section class="progress-overview">
+  <button class="progress-card progress-card-action" id="attendanceCard" type="button"><span class="progress-title"><strong>Attendance</strong></span><strong class="metric" id="attendanceCount">0 days</strong><span class="progress-hint">Click to mark today's attendance</span><div class="progress-track"><div class="progress-fill" id="attendanceProgress"></div></div></button>
+  <div class="progress-card"><span class="progress-title"><strong>Logbook Entries</strong></span><strong class="metric" id="logbookCount">0 submitted</strong><span class="progress-hint">Total submitted logbooks</span><div class="progress-track"><div class="progress-fill" id="logbookProgress"></div></div></div>
+  <div class="progress-card"><span class="progress-title"><strong>Progress Status</strong></span><strong class="metric" id="progressStatus">In Progress</strong><span class="progress-hint">Your internship overview</span><div class="progress-track"><div class="progress-fill" id="overallProgress"></div></div></div>
+</section>
+<main class="dashboard-content">
+  <section class="dashboard-panel"><h2>Logbook Submission</h2><p class="upload-description"><span aria-hidden="true">⇧</span> Upload your logbook file</p>
+    <form id="logbookForm"><label class="file-picker"><span class="file-picker-icon">＋</span><span id="logbookFileName">Choose a file (PDF, DOC, DOCX)</span><input id="logbookFile" type="file" accept=".pdf,.doc,.docx" required></label><p class="file-help">Choose your completed logbook file. This prototype records the file name only.</p><p class="upload-status" id="logbookMessage" role="status"></p><button class="submit-button" type="submit">Submit Logbook</button></form>
+  </section>
+  <section class="dashboard-panel"><h2>Daily Activities &amp; Reminders</h2><p class="reminder-date" id="todayDate"></p><form class="reminder-form" id="reminderForm"><div class="reminder-fields"><div><label for="reminderTime">Time</label><input type="time" id="reminderTime" required></div><div><label for="reminderTitle">Activity / reminder</label><input id="reminderTitle" type="text" placeholder="e.g. Meeting with supervisor" required></div></div><button class="add-reminder-button" type="submit">+ Add reminder</button></form><p class="reminder-empty" id="reminderEmpty">No activities added for today yet.</p><ul class="updates-list" id="reminderList"></ul></section>
+</main>
+<div class="attendance-modal" id="attendanceModal" hidden><section class="attendance-dialog" role="dialog" aria-modal="true" aria-labelledby="attendanceTitle"><button class="modal-close" id="closeAttendance" aria-label="Close">×</button><h2 id="attendanceTitle">Today's Attendance</h2><p id="attendanceModalText">Confirm your attendance for today.</p><p class="attendance-note">Attendance is recorded locally in this browser for prototype purposes.</p><p class="attendance-modal-message" id="attendanceMessage"></p><button class="mark-attendance-button" id="markAttendance" type="button">Mark Present Today</button></section></div>
+<footer class="dashboard-footer">Smart Internship Management System · University Malaysia Kelantan</footer>
+<script src="dashboard.js"></script></body></html>
